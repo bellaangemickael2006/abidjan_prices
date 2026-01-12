@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prix Agricoles — Abidjan</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="banner">
+    <div class="nav">
+      <h1>Prix Agricoles à Abidjan</h1>
+      <nav>
+        <a href="index.html">Accueil</a>
+        <a href="login.html">Connexion</a>
+        <a href="admin.html">Admin</a>
+      </nav>
+    </div>
+    <p>Comparez les prix, suivez l'évolution et repérez les hausses suspectes.</p>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <label>Produit
+        <select id="produitSelect"></select>
+      </label>
+      <label>Date
+        <input type="date" id="dateInput" />
+      </label>
+      <button id="btnCompare">Comparer</button>
+    </section>
+
+    <section id="results">
+      <div id="loader" aria-hidden="true" class="loader" style="display:none" aria-live="polite"></div>
+      <div id="summary" aria-live="polite"></div>
+      <table id="prixTable" aria-describedby="summary">
+        <thead><tr><th scope="col">Marché</th><th scope="col">Prix</th><th scope="col">Indicateur</th></tr></thead>
+        <tbody></tbody>
+      </table>
+
+      <canvas id="chart" width="400" height="200" aria-label="Graphique d'évolution des prix"></canvas>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
